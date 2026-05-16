@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+enum DexMessageType {
+    MSG_DAT_MOT = 0;
+    MSG_DAT_ENC = 1;
+}
+
+message TopicRegisterMessage {
+    uint32 topic_id = 1;
+    DexMessageType mtype = 2;
+    string name = 3;
+}
+
+message TopicDataMessage {
+    uint32 topic_id = 1;
+    bytes payload = 2;
+}
